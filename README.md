@@ -10,7 +10,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Foundation Models: Exploration of foundation models in AI, their application to various tasks, and ethical implications.
 * Adapting Foundation Models: Techniques for adapting foundation models including prompt tuning and parameter-efficient fine-tuning (PEFT).
 
-  → [Project: Apply Lightweight Fine-Tuning to a Foundation Model using PEFT (tbd)]()
+  → [Project: Apply Lightweight Fine-Tuning to a Foundation Model using PEFT (tbd)](/project1_Lightweight_Fine-Tuning)
 
 **Large Language Models (LLMs) & Text Generation:**
 * Introduction to LLMs: Types of LLMs, understanding their limitations and capabilities, and strategies for prompt engineering.
