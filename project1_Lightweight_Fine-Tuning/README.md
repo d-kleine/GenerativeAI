@@ -1,4 +1,4 @@
-# Lightweight Fine-Tuning Project
+# Project: Apply Lightweight Fine-Tuning to a Foundation Mode
 
 ## Introduction
 
