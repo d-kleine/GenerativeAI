@@ -27,14 +27,35 @@ The project consists of following elements:
 - **Dataset:**
     - Utilize datasets from Hugging Face's library, ensuring compatibility with the task and size constraints of the Udacity Workspace.
 
-# Implementation and Results Summary
+# Implementation
+
+The project has been implemented in the following order:
+
+1. **Loading and Evaluating a Foundation Model**
+   - *Loading the model*
+     - Select a model and load it into your notebook.
+   - *Evaluating the model*
+     - Perform an initial evaluation of the model on a chosen sequence classification task. This step entails loading an appropriate tokenizer and dataset. 
+
+2. **Performing Parameter-Efficient Fine-Tuning**
+   - *Creating a PEFT config*
+     - Create a PEFT config with suitable hyperparameters for the chosen model.
+   - *Creating a PEFT model*
+     - Utilize the PEFT config and foundation model to create a PEFT model.
+   - *Training the model*
+     - Run a training loop with at least one epoch using the PEFT model and dataset.
+   - *Saving the trained model*
+     - Save the PEFT model's progress using `save_pretrained` if not already saved during training.
+
+3. **Performing Inference with a PEFT Model**
+   - *Loading the model*
+     - Load the trained model using the appropriate PEFT model class.
+   - *Evaluating the model*
+     - Repeat the evaluation process using the PEFT model. Compare the results with the original foundation model's results.
 
 This project utilized the IMDb dataset alongside the DistilBERT-base-uncased model for sentiment analysis. Through low-rank adaptation (LoRA), we observed a notable improvement in overall accuracy, albeit with a slight increase in training duration.
 
 - **Fine-tuning Dataset**: Utilized the IMDb dataset, offering a lightweight yet effective resource for sentiment analysis tasks.
-
 - **Model**: Employed DistilBERT-base-uncased, a practical transformer-based model known for its efficiency in NLP tasks.
-
 - **Evaluation Approach**: Primarily assessed accuracy, revealing that low-rank adaptation (LoRA) significantly improved overall accuracy. However, training duration slightly extended due to the adaptation process.
-
 - **PEFT Technique**: Low-rank adaptation (LoRA) demonstrated enhanced accuracy while fine-tuning, despite a slight increase in training time.
