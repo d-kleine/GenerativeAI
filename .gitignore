@@ -161,3 +161,6 @@ cython_debug/
 
 # project 1 foundation model
 project1_Lightweight_Fine-Tuning/foundation_model/
+
+# OpenAI API key
+*.env
