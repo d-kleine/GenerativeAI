@@ -19,7 +19,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Retrieval Augmented Generation: Creation of a custom Q&A bot and leveraging OpenAI's language processing capabilities.
 * Build Custom Datasets for LLMs: Construction of relevant datasets for fine-tuning large language models.
 
-  → Project: Build Your Own Custom Chatbot (tbd)
+  → [Project: Build Your Own Custom Chatbot](/project2_Custom-chatbot)
 
 **Computer Vision and Generative AI:**
 * Introduction to Image Generation: Defining image generation and its relevance in AI and machine learning.
