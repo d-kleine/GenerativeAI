@@ -41,11 +41,11 @@ For this project, a web application has been provided to enable the swapping of 
 
 1. Setting up a *Segment Anything Model (SAM)*. 
 
-    SAM is an advanced instance segmentation model developed by Meta AI, designed to perform complex image segmentation tasks. It is notable for its zero-shot inference capabilities, meaning it can accurately segment images without prior specific training on those tasks. SAM's architecture integrates three primary components: an image encoder, a prompt encoder, and a mask decoder. The image encoder processes the input image and creates a condensed feature matrix, while the prompt encoder handles various types of prompts, such as points, boxes, or text. The mask decoder then combines these features and prompts to generate segmentation masks.
+    SAM is SAM-ViT-Base is a vision transformer model developed by Meta AI, designed to perform complex image segmentation tasks. It is notable for its zero-shot inference capabilities, meaning it can accurately segment images without prior specific training on those tasks. SAM's architecture integrates three primary components: an image encoder, a prompt encoder, and a mask decoder. The image encoder processes the input image and creates a condensed feature matrix, while the prompt encoder handles various types of prompts, such as points, boxes, or text. The mask decoder then combines these features and prompts to generate segmentation masks.
 
    *SAM-ViT-Base* has been chosen for its superior performance in accurately segmenting images into foreground and background, its availability as a pre-trained model, and its computational efficiency, making it ideal for integrating into the app.
 
-    The model will been downloaded from HuggingFace (https://huggingface.co/models) and serves for segmenting images into foreground and background:
+    The model will been downloaded from HuggingFace (https://huggingface.co/models) and serves for segmenting images into an subject of interest and a background:
 
     ***Settings***:
     * Tasks: `Mask Generation`
