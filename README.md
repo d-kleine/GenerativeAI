@@ -28,7 +28,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Transformer-Based Computer Vision Models: Understanding Vision Transformers and their applications.
 * Diffusion Models: Fundamentals of diffusion algorithms and hands-on work with Huggingface Diffusers for image generation.
 
-    → [Project: AI Photo Editing with Inpainting using Generative AI](/project3_AI-Photo-Editing-Impaiting)
+    → [Project: AI Photo Editing with Inpainting using Generative AI](/project3_AI-Photo-Editing-Inpainting)
 
 **Building Generative AI Solutions:**
 * Introduction to Building Generative Apps: Design and implementation of Generative AI using Large Language Models.
