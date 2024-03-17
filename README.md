@@ -28,7 +28,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Transformer-Based Computer Vision Models: Understanding Vision Transformers and their applications.
 * Diffusion Models: Fundamentals of diffusion algorithms and hands-on work with Huggingface Diffusers for image generation.
 
-    → Project: AI Photo Editing with Inpainting using Generative AI (tbd)
+    → [Project: AI Photo Editing with Inpainting using Generative AI](/project3_AI-Photo-Editing-Impaiting)
 
 **Building Generative AI Solutions:**
 * Introduction to Building Generative Apps: Design and implementation of Generative AI using Large Language Models.
@@ -42,10 +42,10 @@ This program provides participants with an opportunity to embark on a transforma
 Generative AI Fluency • Image classification • Transfer learning • Training neural networks • Hugging Face • Parameter-Efficient Fine-Tuning • Prompt Engineering • Deep learning • PyTorch • Foundation Models • Ethical AI
 
 * **Large Language Models (LLMs) & Text Generation**:
-Together AI API • Search implementation in Python • NLP transformers • GPT • Selenium • Large Language Models • Data cleaning • Natural language processing • Bert • OpenAI API • Retrieval-Augmented Generation • Transformer neural networks • Prompt Engineering • Pandas • PyTorch • Tokenization • Cosine • API requests • Recurrent neural networks • Attention mechanisms • Text generation • Beautifulsoup • Data quality assessment • Word embeddings • Data scraping
+Together AI API • Search implementation in Python • NLP transformers • Selenium • Large Language Models • Data cleaning • Natural language processing • OpenAI API • Transformer neural networks • Prompt Engineering • Tokenization • Cosine Similarity • API requests • Recurrent neural networks • Attention mechanisms • Text generation • Data quality assessment • Word embeddings • Data scraping
 
 * **Computer Vision and Generative AI**:
-Image pre-processing • Transfer learning • Word embeddings • Ethical AI • Diffusion Models • Yolo algorithm • Model evaluation • Text generation • Computer vision fluency • Image classification • Large Language Models • Pandas • Image generation • Training neural networks • Convolutional neural networks • Parameter-Efficient Fine-Tuning • Image segmentation • Computer Vision Transformers • Tokenization • Data quality assessment • Generative adversarial networks
+Image pre-processing • Transfer learning • Word embeddings • Ethical AI • Diffusion Models • YOLO algorithm • Model evaluation • Text generation • Computer vision fluency • Image classification • Large Language Models • Pandas • Image generation • Training neural networks • Convolutional neural networks • Parameter-Efficient Fine-Tuning • Image segmentation • Computer Vision Transformers • Tokenization • Data quality assessment • Generative adversarial networks
 
 * **Building Generative AI Solutions**:
 Vectors • Retrieval-Augmented Generation • OpenAI API • LangChain
