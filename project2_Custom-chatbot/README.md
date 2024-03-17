@@ -12,8 +12,7 @@ This project involves creating a unique chatbot using OpenAI by incorporating a 
 
 At the beginning of the project, the chosen dataset is introduced with a brief explanation of its relevance and how it aligns with the project's objectives. Furthermore, the chatbot's question-and-answer abilities are demonstrated before and after the dataset integration, highlighting the improvements made possible by the customized dataset. This showcases how the chatbot becomes more effective and insightful in responding to user queries within the defined scenario.
 
-# Implementation
-
+## Implementation
 For this Custom Chatbot project, a provided Fashion Trends dataset of articles, crawled from websites for digital media and entertainment, has been used. This dataset contains text information about fashion trends from the year 2023, including popular styles, colors, fabric types, and other key fashion details. As of the time the project has been set up, OpenAI does not have access to real-time or future data beyond January 2022, so it does not have information about Fashion trends of 2023. With the use of the OpenAI API, the chatbot calculates relevance by computing the similarity score between text embeddings using cosine similarity. This method will be employed to compare the performance of an OpenAI model (which does not go beyond January 2022) with the same OpenAI model ingesting context as textual information from the fashion trends 2023 dataset. By incorporating Retrieval-Augmented Generation (RAG) with the dataset and employing Prompt Engineering for the custom query, the chatbot enhances its ability to generate responses that are contextually relevant and tailored to user inquiries.
 
 The project consists of following steps:
