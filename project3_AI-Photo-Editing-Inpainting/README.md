@@ -8,7 +8,7 @@ AI photo editing with inpainting is revolutionizing the way we enhance and resto
 With inpainting, previously masked segmented subjects can be either edited:
 ![Inpainting mask](./screenshots/examples/ML_subject_man.png)
 
-Or the mask can inverted to edit the non-segmented parts of the image, like the background of an image:
+Or the mask can be inverted to edit the non-segmented parts of the image, for instance the background:
 ![Inpainting inverted mask](./screenshots/examples/ML_background_island.png)
 
 ## Project Summary
@@ -41,11 +41,11 @@ For this project, a web application has been provided to enable the swapping of 
 
 1. Setting up a *Segment Anything Model (SAM)*. 
 
-    SAM is SAM-ViT-Base is a vision transformer model developed by Meta AI, designed to perform complex image segmentation tasks. It is notable for its zero-shot inference capabilities, meaning it can accurately segment images without prior specific training on those tasks. SAM's architecture integrates three primary components: an image encoder, a prompt encoder, and a mask decoder. The image encoder processes the input image and creates a condensed feature matrix, while the prompt encoder handles various types of prompts, such as points, boxes, or text. The mask decoder then combines these features and prompts to generate segmentation masks.
+    SAM is a vision transformer model designed to perform complex image segmentation tasks. It is notable for its zero-shot inference capabilities, meaning it can accurately segment images without prior specific training on those tasks. SAM's architecture integrates three primary components: an image encoder, a prompt encoder, and a mask decoder. The image encoder processes the input image and creates a condensed feature matrix, while the prompt encoder handles various types of prompts, such as points, boxes, or text. The mask decoder then combines these features and prompts to generate segmentation masks.
 
    *SAM-ViT-Base* has been chosen for its superior performance in accurately segmenting images into foreground and background, its availability as a pre-trained model, and its computational efficiency, making it ideal for integrating into the app.
 
-    The model will been downloaded from HuggingFace (https://huggingface.co/models) and serves for segmenting images into an subject of interest and a background:
+    The model will be downloaded from HuggingFace (https://huggingface.co/models) and serves for segmenting images into an subject of interest and a background:
 
     ***Settings***:
     * Tasks: `Mask Generation`
@@ -56,11 +56,11 @@ For this project, a web application has been provided to enable the swapping of 
 
 2. Generating segmentation masks for specified objects in images using SAM. This involves defining points on the image to indicate the subject, then using SAM to produce the segmentation mask.
 
-3. Utilizing *Stable Diffusion XL (SD-XL) Inpainting 0.1* for inpainting. 
+3. Utilizing *Stable Diffusion XL (SD-XL) 1.0 Inpainting 0.1* for inpainting. 
 
-    SD-XL Inpainting 0.1 is a sophisticated latent text-to-image diffusion model developed to generate photo-realistic images from textual descriptions, with the added capability of inpainting—modifying specific parts of an image using a mask. This model represents an evolution of the Stable Diffusion XL 1.0 model, building upon its capabilities to produce highly detailed and realistic outputs. It is finetuned from the [stabilityai/stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0), a large-scale multimodal model developed for generating natural language descriptions of images with the ability to incorporate structured knowledge, and trained to perform at a resolution of 1024x1024 pixels. The model incorporates a unique feature that allows for inpainting, where users can specify parts of an image to be edited or filled in with new content that aligns with a given text prompt, enhancing its versatility in image generation and editing tasks. It is designed to work by taking an input image along with a mask that indicates the area to be inpainted. Users can provide a text prompt to guide the generation of the inpainted area, allowing for precise modifications or additions to the original image.
+    SD-XL 1.0 Inpainting 0.1 is a sophisticated latent text-to-image diffusion model developed to generate photo-realistic images from textual descriptions, with the added capability of inpainting—modifying specific parts of an image using a mask. This model represents an evolution of the Stable Diffusion XL 1.0 model, building upon its capabilities to produce highly detailed and realistic outputs. It is finetuned from the [stabilityai/stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0), a large-scale multimodal model developed for generating natural language descriptions of images with the ability to incorporate structured knowledge, and trained to perform at a resolution of 1024x1024 pixels. The model incorporates a unique feature that allows for inpainting, where users can specify parts of an image to be edited or filled in with new content that aligns with a given text prompt, enhancing its versatility in image generation and editing tasks. It is designed to work by taking an input image along with a mask that indicates the area to be inpainted. Users can provide a text prompt to guide the generation of the inpainted area, allowing for precise modifications or additions to the original image.
 
-    The SD-XL Inpainting 0.1 model will been downloaded from HuggingFace (https://huggingface.co/models) and serves for seamlessly filling in the selected regions with contextually appropriate content, thereby completing the transformation of the image according to the user's specifications.
+    The SD-XL 1.0 Inpainting 0.1 model will be downloaded from HuggingFace (https://huggingface.co/models) and serves for seamlessly filling in the selected regions with contextually appropriate content, thereby completing the transformation of the image according to the user's specifications.
 
    ***Settings***:
    * Tasks: `Text to Image`
@@ -68,7 +68,7 @@ For this project, a web application has been provided to enable the swapping of 
    * Other: `inpainting`
 
    ![Segmentation models](./screenshots/models_inpainting.png)
-   ![SDXL 1.0 Inpainting 0.1](./screenshots/sdxl-xl-1.0-inpainting-0.1.png)
+   ![SD-XL 1.0 Inpainting 0.1](./screenshots/sdxl-xl-1.0-inpainting-0.1.png)
 
    This process is guided by text prompts, to replace backgrounds. This includes loading the pretrained inpainting pipeline, specifying input parameters such as the raw image, SAM-generated mask, text prompt, and optional parameters like negative prompts and seeds for reprodicibility.
 
