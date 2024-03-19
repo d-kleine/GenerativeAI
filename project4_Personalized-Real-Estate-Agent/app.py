@@ -21,10 +21,8 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
         n_results=5,
     )
 
-    personalized_listings = []
+    output_html = ""
     for i in range(len(results["ids"])):
-        listing_id = results["ids"][i]
-        listing_metadata = results["metadatas"][i]
         document = results["documents"][i]
 
         # Personalize the listing description using OpenAI
@@ -44,24 +42,22 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
         response = openai_client.completions.create(
             model="gpt-3.5-turbo-instruct",
             prompt=prompt,
-            max_tokens=100,
+            max_tokens=1000,
             n=1,
             stop=None,
             temperature=0.70,
         )
         personalized_description = response.choices[0].text.strip()
 
-        personalized_listings.append({
-            "id": listing_id,
-            "neighborhood": listing_metadata,
-            "price": listing_metadata[1],
-            "bedrooms": listing_metadata[2],
-            "bathrooms": listing_metadata[3],
-            "size_sqft": listing_metadata[4],
-            "description": personalized_description,
-        })
+        # Generate HTML for the listing
+        listing_html = f"""
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <p><strong>Description:</strong> {personalized_description}</p>
+        </div>
+        """
+        output_html += listing_html
 
-    return personalized_listings
+    return output_html
 
 
 with gr.Blocks() as demo:
@@ -86,7 +82,7 @@ with gr.Blocks() as demo:
                              placeholder="Enter any other requirements (e.g. yard, garage, etc.)")
 
     btn = gr.Button("Search Listings")
-    output = gr.JSON(label="Personalized Listings")
+    output = gr.HTML(label="Personalized Listings")
 
     btn.click(get_personalized_listings,
               inputs=[bedrooms, bathrooms, location,
