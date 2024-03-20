@@ -4,7 +4,7 @@ import chromadb
 
 # Initialize clients
 openai_client = openai.OpenAI()
-# alternativly for local save: client = chromadb.PersistentClient(path="/.")
+# alternativly for local save: client = chromadb.PersistentClient(path="./")
 chromadb_client = chromadb.Client()
 
 # Constants for OpenAI completion
