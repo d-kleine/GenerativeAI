@@ -9,10 +9,14 @@ collection = client.get_or_create_collection("real-estate-listings")
 
 
 def get_personalized_listings(bedrooms, bathrooms, location, price_range, property_type, other_prefs):
+    # Extract price range values
+    price_parts = price_range.split("-")
+    price_min = price_parts[0].replace("$", "").replace("k", "000")
+    price_max = price_parts[1].replace("$", "").replace("k", "000")
+
     # Convert price range to numeric values
-    price_min, price_max = price_range.split("-")
-    price_min = int(price_min.replace("$", "").replace("k", "000"))
-    price_max = int(price_max.replace("$", "").replace("k", "000"))
+    price_min = int(price_min)
+    price_max = int(price_max)
 
     # Query the Chroma database based on user preferences
     results = collection.query(
@@ -20,6 +24,9 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
             f"Bedrooms: {bedrooms}, Bathrooms: {bathrooms}, Location: {location}, Price Range: {price_min}-{price_max}, Property Type: {property_type}, Other Requirements: {other_prefs}"],
         n_results=3,
     )
+
+    if len(results["ids"]) == 0:
+        return "No matching listings found for the specified preferences."
 
     output_html = ""
     for i in range(len(results["ids"])):
@@ -75,7 +82,7 @@ with gr.Blocks() as demo:
             bathrooms = gr.Number(label="Number of Bathrooms", value=2)
             location = gr.Textbox(label="Preferred Location")
         with gr.Column():
-            price_range = gr.Radio(["$100k-200k", "$200k-400k", "$400k-600k", "$600k+"],
+            price_range = gr.Radio(["$100k-200k", "$200k-400k", "$400k-600k"],
                                    label="Price Range", value="$400k-600k")
             property_type = gr.Dropdown(["House", "Condo", "Townhouse", "Multi-Family"],
                                         label="Property Type", value="House")
