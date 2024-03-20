@@ -18,12 +18,13 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
     results = collection.query(
         query_texts=[
             f"Bedrooms: {bedrooms}, Bathrooms: {bathrooms}, Location: {location}, Price Range: {price_min}-{price_max}, Property Type: {property_type}, Other Requirements: {other_prefs}"],
-        n_results=5,
+        n_results=3,
     )
 
     output_html = ""
     for i in range(len(results["ids"])):
         document = results["documents"][i]
+        listing_id = results["ids"][i]
 
         # Personalize the listing description using OpenAI
         prompt = f"""
@@ -52,6 +53,7 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
         # Generate HTML for the listing
         listing_html = f"""
         <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <p><strong>ID:</strong> {listing_id}</p>
             <p><strong>Description:</strong> {personalized_description}</p>
         </div>
         """
