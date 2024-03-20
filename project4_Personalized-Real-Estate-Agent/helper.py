@@ -125,13 +125,11 @@ def process_listings(listings_map):
         print(listing)
         # Check if the required fields exist in the listing dictionary
         if all(field in listing for field in ["id"]):
-            # Document content is the concatenation for House and Neighborhood descriptions
+            # Separate house and neighborhood preferences into paragraphs
             document_content = (
-                "House preferences: "
-                + listing["description"]
-                + " "
-                + "Neighborhood preferences: "
-                + listing["neighborhood description"]
+                "House preferences: " + listing["description"] + "\n\n" +
+                "Neighborhood preferences: " +
+                listing["neighborhood description"]
             )
 
             # Metadata map
@@ -187,7 +185,7 @@ def query_listings(bedrooms, bathrooms, location, price_min, price_max, property
         dict: A dictionary containing the queried listings.
     """
     query_text = f"Bedrooms: {bedrooms}, Bathrooms: {bathrooms}, Location: {location}, Price Range: {price_min}-{price_max}, Property Type: {property_type}, Other Requirements: {other_prefs}"
-    results = collection.query(query_texts=[query_text], n_results=3)
+    results = collection.query(query_texts=[query_text], n_results=1)
     return results
 
 
@@ -237,9 +235,11 @@ def generate_listing_html(listing_id, personalized_description):
         str: HTML code for the listing.
     """
     return f"""
-    <div class="listing" id="listing-{listing_id}">
-        <h2>Listing ID: {listing_id}</h2>
-        <p>{personalized_description}</p>
+    <div class="listing-container">
+        <div class="listing" id="listing-{listing_id}">
+            <h2>Listing ID: {listing_id}</h2>
+            <p>{personalized_description}</p>
+        </div>
     </div>
     """
 
