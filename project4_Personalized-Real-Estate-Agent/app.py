@@ -30,4 +30,4 @@ with gr.Blocks() as demo:
                       price_range, property_type, other_prefs],
               outputs=output)
 
-demo.launch()
+demo.launch(debug=True)
