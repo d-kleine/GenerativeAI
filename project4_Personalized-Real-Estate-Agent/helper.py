@@ -7,6 +7,10 @@ openai_client = openai.OpenAI()
 # alternativly for local save: client = chromadb.PersistentClient(path="./")
 chromadb_client = chromadb.Client()
 
+# Database
+collection = chromadb_client.get_or_create_collection(
+    "real-estate-listings")
+
 # Constants for OpenAI completion
 COMPLETION_MODEL_NAME = "gpt-3.5-turbo-instruct"
 MAX_ANSWER_TOKENS = 3000
@@ -108,10 +112,6 @@ def process_listings(listings_map):
     Args:
         listings_map (dict): A dictionary containing the listings to process.
     """
-    # Get or create a collection for real estate listings
-    collection = chromadb_client.get_or_create_collection(
-        "real-estate-listings")
-
     # Parse the cleaned JSON string into a list of dictionaries
     listings = listings_map["listings"]
 
@@ -143,6 +143,36 @@ def process_listings(listings_map):
             # Print a message if any required field is missing
             print(
                 f"Skipping listing ID {listing.get('id')} due to missing fields.")
+
+
+def check_db_listings(collection=collection):
+    """
+    Check function to list all collections, get details of a specific collection,
+    and perform operations on the collection.
+    """
+
+    # List all collections
+    collections = chromadb_client.list_collections()
+    print("Collections:")
+    for collection_name in collections:
+        print(collection_name)
+
+    # Get details of a specific collection
+    # Modify this with your collection name
+    collection_name = "real-estate-listings"
+    collection = chromadb_client.get_collection(collection_name)
+    if collection:
+        print("\nCollection Details:")
+        print(f"Name: {collection.name}")
+        print(f"Number of Items: {collection.count()}")
+
+        # Get all items in the collection
+        all_items = collection.get()
+        print("\nItems in Collection:")
+        for item in all_items:
+            print(item)
+    else:
+        print(f"\nCollection '{collection_name}' not found.")
 
 
 def extract_price_range(price_range):
