@@ -294,19 +294,11 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
     <div class="listings-container">
     """
     for i in range(len(results["ids"])):
-        document = results["documents"][i]
         listing_id = results["ids"][i]
-        metadata = results["metadatas"][i]
-        neighborhood = metadata["neighborhood"]
-        price = metadata["price"]
-        bedrooms = metadata["bedrooms"]
-        bathrooms = metadata["bathrooms"]
-        size_sqft = metadata["size_sqft"]
         personalized_description = personalize_listing(
-            document, bedrooms, bathrooms, location, price_range, property_type, other_prefs)
-        listing_html = generate_listing_html(
-            listing_id, neighborhood, price, bedrooms, bathrooms, size_sqft, personalized_description)
-        output_html += listing_html
+            results["documents"][i], bedrooms, bathrooms, location, price_range, property_type, other_prefs)
+        output_html += f"<div>Listing ID: {listing_id}</div>"
+        output_html += f"<div>Personalized Description: {personalized_description}</div>"
 
     output_html += """
     </div>
