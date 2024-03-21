@@ -68,7 +68,7 @@ pip install -r requirements.txt
 ```
 **Step 4: Run the code**
 
-To run the code, make sure the project folder it the root folder. Run the Python code provided in `starter.ipynb`.
+To run the code, make sure the project folder is the root folder. Run the Python code provided in `starter.ipynb`.
 
 # Implementation
 For this project, a web application has been provided to enable the swapping of backgrounds for subjects in images. The implementation involves following steps:
