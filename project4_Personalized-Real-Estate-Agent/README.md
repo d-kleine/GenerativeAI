@@ -61,7 +61,8 @@ The *.env* file should look like the following:
 
 For further information to step 1 to 4, please visit [Get up and running with the OpenAI API](https://platform.openai.com/docs/quickstart?context=python).
 
-**Step 5: Run the code***
+**Step 5: Run the code**
+
 To run the code, make sure the project folder it the root folder. Run the Python code provided in `HomeMatch.ipynb`.
 
 # Implementation
