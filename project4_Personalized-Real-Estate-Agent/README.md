@@ -25,7 +25,7 @@ The implementation of the "HomeMatch" application has involved the utilization o
 
 * For the storage and retrieval of real estate listings, ChromaDB, a vector database package compatible with Python, was utilized. ChromaDB facilitated efficient storage of property embeddings generated from the listing descriptions, allowing for fast and accurate retrieval based on user preferences.
 
-* To interface with users and collect their preferences, a frontend application was developed using Gradio. Gradio provided a user-friendly interface for users to input their preferences, guiding them through a series of questions or allowing them to express their preferences in natural language. This streamlined the process of gathering user requirements and ensured a seamless user experience.
+* To interface with users and collect their preferences, a frontend application was developed using Gradio. Gradio provides a user-friendly interface for app users to input their preferences, guiding them through a series of questions or allowing them to express their preferences in natural language. Upon clicking the "Search Listings" button, the app retrieves personalized listings based on the user's preferences and displays them in an HTML output. The HTML output displays real estate listings from the database based on the specified criteria. For each listing, it includes information such as the listing ID, neighborhood, price, number of bedrooms and bathrooms, size, and a personalized description of the real estate tailored to the user's preferences. This streamlined the process of gathering user requirements and ensured a seamless user experience.
 
 ![Gradio App](./screenshots/gradio_app.png)
 
