@@ -4,7 +4,7 @@
 Personalized Real Estate Agent, powered by generative AI, revolutionizes the traditional approach to property buying and selling by offering tailor-made solutions to individual clients. This innovative technology utilizes advanced algorithms to analyze vast datasets, including client preferences, market trends, and property features, to generate highly personalized recommendations. By understanding each client's unique needs and desires, the Personalized Real Estate Agent optimizes the search process, presenting curated listings that closely match their criteria. Furthermore, it offers virtual property tours, predictive pricing models, and personalized investment advice, enhancing the overall real estate experience. Beyond catering to individual buyers and sellers, this technology also finds application in property management, urban planning, and real estate investment analysis, showcasing its versatility and potential impact across various fields within the real estate industry.
 
 ## Project Summary
-The "HomeMatch" project at "Future Homes Realty" aims to revolutionize the real estate industry by offering a personalized experience for clients during the property search process. The project focuses on leveraging advanced technologies to understand buyer preferences, match them with suitable property listings, and generate personalized descriptions tailored to individual needs. 
+The "HomeMatch" project at "Future Homes Realty" aims to revolutionize the real estate industry by offering a personalized experience for clients during the property search process. It utilizies large language models and vector databases for content generation and semantic search. The project focuses on leveraging advanced technologies to understand buyer preferences, match them with suitable property listings, and generate personalized descriptions tailored to individual needs. 
 
 The core components of "HomeMatch" include:
 
@@ -52,6 +52,5 @@ Here's a summary of its main functionalities:
 
 * `HomeMatch.ipynb`: This IPython Notebook helps to generate, process, and present real estate listings using the OpenAI API, saving the generated information in a vector database via ChromaDB and runs a Gradio interface for personalized real estate listings through the "HomeMatch" application. 
 * `app.py` serves simple Gradio interface for personalized real estate listings based on user input ("HomeMatch" application).
-
 
 Through the integration of these technologies, an end-to-end solution has been created that delivers personalized real estate recommendations based on user preferences. This approach enhances the overall user experience and facilitates informed decision-making in the homebuying process.
