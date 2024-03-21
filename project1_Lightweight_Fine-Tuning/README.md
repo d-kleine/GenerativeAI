@@ -6,6 +6,40 @@ Lightweight fine-tuning stands as a crucial technique for adapting foundation mo
 
 **Please note**: This project primarily serves as a demonstration of foundational skills in loading pre-trained models, conducting parameter-efficient fine-tuning (PEFT), and evaluating Large Language model performance. It focuses on fundamental concepts rather than advanced optimization strategies.
 
+## Requirements
+
+**Step 1: Setup Python**
+
+Ensure Python 3.11 is installed on your system. If not, download and install it from the official Python website.
+
+**Step 2: Setup a Virtual Environment**
+
+Create Virtual Environment:
+
+```bash
+python -m venv genai
+```
+Activate on Windows:
+
+```bash
+genai\Scripts\activate
+```
+
+Activate on Unix/MacOS:
+```bash
+source genai/bin/activate
+```
+
+**Step 3: Install Dependencies**
+
+Install the dependencies from the *requirements.txt* file:
+```bash
+pip install -r requirements.txt
+```
+
+**Step 4: Run the code***
+To run the code, make sure the project folder it the root folder. Run the Python code provided in `LightweightFineTuning.ipynb`.
+
 ## Project Summary
 
 This project encompasses all essential components of a PyTorch + Hugging Face training and inference process. Key activities include:

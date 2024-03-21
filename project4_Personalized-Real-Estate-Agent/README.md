@@ -18,6 +18,52 @@ The core components of "HomeMatch" include:
 
 By combining advanced technologies like LLMs and vector databases, "HomeMatch" aims to create a more engaging and tailored experience for clients, enhancing customer satisfaction and revolutionizing the real estate industry's approach to property search.
 
+## Requirements
+
+**Step 1: Setup Python**
+
+Ensure Python 3.11 is installed on your system. If not, download and install it from the official Python website.
+
+**Step 2: Setup a Virtual Environment**
+
+Create Virtual Environment:
+
+```bash
+python -m venv genai
+```
+Activate on Windows:
+
+```bash
+genai\Scripts\activate
+```
+
+Activate on Unix/MacOS:
+```bash
+source genai/bin/activate
+```
+
+**Step 3: Install Dependencies**
+
+Install the dependencies from the *requirements.txt* file:
+```bash
+pip install -r requirements.txt
+```
+
+**Step 4: Set up OpenAI API key**
+
+You can either add the API key for all projects globally as an environment variable or setting the API key for a single project.
+
+To set up an API key for a single project, create a local *.env* file in the project folder and add the key as OPENAI_API_KEY. Also, create a *.gitignore* file in the project root to ensure the *.env file* is not included in version control. After creating the files, copy the secret API key into the .env file.
+
+The *.env* file should look like the following:
+
+```OPENAI_API_KEY=sk-...```
+
+For further information to step 1 to 4, please visit [Get up and running with the OpenAI API](https://platform.openai.com/docs/quickstart?context=python).
+
+**Step 5: Run the code***
+To run the code, make sure the project folder it the root folder. Run the Python code provided in `HomeMatch.ipynb`.
+
 # Implementation
 The implementation of the "HomeMatch" application has involved the utilization of various tools and technologies to ensure efficient generation, storage, and presentation of real estate listings tailored to user preferences.
 
