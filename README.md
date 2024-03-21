@@ -35,7 +35,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Building Generative AI Solutions with Vector Databases: Core concepts of vector databases and their application in AI.
 * Developing Generative AI Solutions with LangChain: Exploration of LangChain framework for working with large language models.
 
-    → [Project: Personalized Real Estate Agent utilizing large language models and vector databases for content generation and semantic search](./project4_Personalized-Real-Estate-Agent)
+    → [Project: Personalized Real Estate Agent](./project4_Personalized-Real-Estate-Agent)
 
 ## Skills
 * **Generative AI Fundamentals**:
