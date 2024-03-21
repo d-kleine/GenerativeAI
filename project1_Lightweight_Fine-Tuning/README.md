@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 **Step 4: Run the code**
 
-To run the code, make sure the project folder it the root folder. Run the Python code provided in `LightweightFineTuning.ipynb`.
+To run the code, make sure the project folder is the root folder. Run the Python code provided in `LightweightFineTuning.ipynb`.
 
 ## Project Summary
 
