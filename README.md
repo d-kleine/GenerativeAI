@@ -10,7 +10,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Foundation Models: Exploration of foundation models in AI, their application to various tasks, and ethical implications.
 * Adapting Foundation Models: Techniques for adapting foundation models including prompt tuning and parameter-efficient fine-tuning (PEFT).
 
-  → [Project: Apply Lightweight Fine-Tuning to a Foundation Model using PEFT](./project1_Lightweight_Fine-Tuning)
+  → [Project: Lightweight Fine-Tuning to a Foundation Model using PEFT](./project1_Lightweight_Fine-Tuning)
 
 **Large Language Models (LLMs) & Text Generation:**
 * Introduction to LLMs: Types of LLMs, understanding their limitations and capabilities, and strategies for prompt engineering.
@@ -19,7 +19,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Retrieval Augmented Generation: Creation of a custom Q&A bot and leveraging OpenAI's language processing capabilities.
 * Build Custom Datasets for LLMs: Construction of relevant datasets for fine-tuning large language models.
 
-  → [Project: Build Your Own Custom Chatbot](./project2_Custom-chatbot)
+  → [Project: Building a Custom Chatbot](./project2_Custom-chatbot)
 
 **Computer Vision and Generative AI:**
 * Introduction to Image Generation: Defining image generation and its relevance in AI and machine learning.
@@ -28,7 +28,7 @@ This program provides participants with an opportunity to embark on a transforma
 * Transformer-Based Computer Vision Models: Understanding Vision Transformers and their applications.
 * Diffusion Models: Fundamentals of diffusion algorithms and hands-on work with Huggingface Diffusers for image generation.
 
-    → [Project: AI Photo Editing with Inpainting using Generative AI](./project3_AI-Photo-Editing-Inpainting)
+    → [Project: AI Photo Editing with Inpainting](./project3_AI-Photo-Editing-Inpainting)
 
 **Building Generative AI Solutions:**
 * Introduction to Building Generative Apps: Design and implementation of Generative AI using Large Language Models.
