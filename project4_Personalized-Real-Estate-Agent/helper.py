@@ -159,8 +159,6 @@ def check_db_listings(collection=collection):
 
     # Get details of a specific collection
     # Modify this with your collection name
-    collection_name = "real-estate-listings"
-    collection = chromadb_client.get_collection(collection_name)
     if collection:
         print("\nCollection Details:")
         print(f"Name: {collection.name}")
