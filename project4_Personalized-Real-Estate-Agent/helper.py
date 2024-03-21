@@ -283,14 +283,19 @@ def generate_listing_html(listing_id, neighborhood, price, bedrooms, bathrooms, 
     Returns:
         str: HTML code for the listing.
     """
+    # display thousand separators
+    formatted_price = '{:,.0f}'.format(price)
+    formatted_size = '{:,.0f}'.format(size_sqft)
+
     return f"""
     <div class="listing-container">
-        <div class="listing" id="listing-{listing_id}">
+        <div class="listing" id="listing-{listing_id[0]}">
+            <p><strong>Listing ID:</strong> {listing_id[0]}</p>
             <p>Neighborhood: {neighborhood}</p>
-            <p>Price: {price}</p>
+            <p>Price: ${formatted_price}</p>
             <p>Bedrooms: {bedrooms}</p>
             <p>Bathrooms: {bathrooms}</p>
-            <p>Size (sqft): {size_sqft}</p>
+            <p>Size (sqft): {formatted_size}</p>
             <p>{personalized_description}</p>
         </div>
     </div>
@@ -324,10 +329,19 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
     """
     for i in range(len(results["ids"])):
         listing_id = results["ids"][i]
+        metadata = results["metadatas"][i][0]
+        neighborhood = metadata["neighborhood"]
+        price = metadata["price"]
+        bedrooms = metadata["bedrooms"]
+        bathrooms = metadata["bathrooms"]
+        size_sqft = metadata["size_sqft"]
         personalized_description = personalize_listing(
-            results["documents"][i], bedrooms, bathrooms, location, price_range, property_type, other_prefs)
-        output_html += f"<div>Listing ID: {listing_id}</div>"
-        output_html += f"<div>Personalized Description: {personalized_description}</div>"
+            results["documents"][i], bedrooms, bathrooms, location, price_range, property_type, other_prefs
+        )
+
+        listing_html = generate_listing_html(
+            listing_id, neighborhood, price, bedrooms, bathrooms, size_sqft, personalized_description)
+        output_html += listing_html
 
     output_html += """
     </div>
