@@ -63,7 +63,7 @@ For further information to step 1 to 4, please visit [Get up and running with th
 
 **Step 5: Run the code**
 
-To run the code, make sure the project folder it the root folder. Run the Python code provided in `HomeMatch.ipynb`.
+To run the code, make sure the project folder is the root folder. Run the Python code provided in `HomeMatch.ipynb`.
 
 # Implementation
 The implementation of the "HomeMatch" application has involved the utilization of various tools and technologies to ensure efficient generation, storage, and presentation of real estate listings tailored to user preferences.
