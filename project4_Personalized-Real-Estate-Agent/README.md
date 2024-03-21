@@ -21,11 +21,11 @@ By combining advanced technologies like LLMs and vector databases, "HomeMatch" a
 # Implementation
 The implementation of the "HomeMatch" application has involved the utilization of various tools and technologies to ensure efficient generation, storage, and presentation of real estate listings tailored to user preferences.
 
-* To generate realistic and compelling real estate listings, we utilized the OpenAI API, leveraging its advanced natural language processing capabilities. This enabled us to create diverse property descriptions that encompassed key details such as neighborhood, price, bedrooms, bathrooms, and house size, providing users with comprehensive insights into each listing.
+* Realistic and compelling real estate listings were generated using the OpenAI API, leveraging its advanced natural language processing capabilities. This enabled the creation of diverse property descriptions encompassing key details such as neighborhood, price, bedrooms, bathrooms, and house size, providing users with comprehensive insights into each listing.
 
-* For the storage and retrieval of real estate listings, we opted for ChromaDB, a vector database package compatible with Python. ChromaDB facilitated efficient storage of property embeddings generated from the listing descriptions, allowing for fast and accurate retrieval based on user preferences.
+* For the storage and retrieval of real estate listings, ChromaDB, a vector database package compatible with Python, was utilized. ChromaDB facilitated efficient storage of property embeddings generated from the listing descriptions, allowing for fast and accurate retrieval based on user preferences.
 
-* To interface with users and collect their preferences, we developed a frontend application using Gradio. Gradio provided a user-friendly interface for users to input their preferences, guiding them through a series of questions or allowing them to express their preferences in natural language. This streamlined the process of gathering user requirements and ensured a seamless user experience.
+* To interface with users and collect their preferences, a frontend application was developed using Gradio. Gradio provided a user-friendly interface for users to input their preferences, guiding them through a series of questions or allowing them to express their preferences in natural language. This streamlined the process of gathering user requirements and ensured a seamless user experience.
 
 ![Gradio App](./screenshots/gradio_app.png)
 
