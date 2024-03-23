@@ -1,7 +1,9 @@
 # Generative AI nano degree program
 
-## Overview
-This program provides participants with an opportunity to embark on a transformative journey into Generative AI. It begins by offering an introductory course that covers the essentials, progresses to mastering text generation with Large Language Models, explores the complexities of image creation in computer vision, and concludes by demonstrating how to apply AI in real-world scenarios. From understanding foundational theories to building sophisticated chatbots and AI agents, this program aims to empower participants with job-ready skills in the exciting field of Generative AI.
+## Introduction and Overview
+Proficiency in Generative AI skills such as text and image generation, deep learning fundamentals, NLP, and computer vision is highly valuable in today's technological landscape. These skills enable individuals to develop innovative solutions across various domains such as natural language processing, image synthesis, and personalized recommendation systems. With the growing demand for AI-driven applications in industries ranging from healthcare to finance, mastering Generative AI equips professionals with the ability to create intelligent systems that enhance efficiency, creativity, and decision-making processes. Additionally, understanding the ethical implications of AI ensures responsible development and deployment of these technologies, fostering trust and sustainability in the field.
+
+This training program covers foundational principles and advanced practices in Generative AI. It includes topics on text and image generation using Large Language Models (LLMs), deep learning fundamentals, NLP, computer vision, and ethical considerations. Through practical projects, learners acquire skills in building custom chatbots, AI photo editing tools, and personalized real estate agents.
 
 ## Program structure
 **Generative AI Fundamentals:**
