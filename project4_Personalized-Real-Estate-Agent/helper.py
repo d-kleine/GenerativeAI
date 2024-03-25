@@ -221,8 +221,8 @@ def query_listings(bedrooms, bathrooms, location, price_min, price_max, property
     # Constructing the query text based on the provided criteria
     query_text = f"Bedrooms: {bedrooms}, Bathrooms: {bathrooms}, Location: {location}, Price Range: {price_min}-{price_max}, Property Type: {property_type}, Other Requirements: {other_prefs}"
 
-    # Performing the query using the constructed query text
-    results = collection.query(query_texts=[query_text], n_results=1)
+    # Performing the query using the constructed query text and returning 3 results
+    results = collection.query(query_texts=[query_text], n_results=3)
 
     # Returning the results of the query
     return results
@@ -289,8 +289,8 @@ def generate_listing_html(listing_id, neighborhood, price, bedrooms, bathrooms, 
 
     return f"""
     <div class="listing-container">
-        <div class="listing" id="listing-{listing_id[0]}">
-            <p><strong>Listing ID:</strong> {listing_id[0]}</p>
+        <div class="listing">
+            <p><strong>Listing ID:</strong> {listing_id}</p>
             <p>Neighborhood: {neighborhood}</p>
             <p>Price: ${formatted_price}</p>
             <p>Bedrooms: {bedrooms}</p>
@@ -317,32 +317,48 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
     Returns:
         str: HTML code containing the personalized listings.
     """
+
+    # Extracting price range
     price_min, price_max = extract_price_range(price_range)
+
+    # Querying listings based on specified criteria
     results = query_listings(bedrooms, bathrooms, location,
                              price_min, price_max, property_type, other_prefs)
 
+    # If no matching listings found, return a message
     if len(results["ids"]) == 0:
         return "No matching listings found for the specified preferences."
 
+    # Start building HTML output
     output_html = """
     <div class="listings-container">
     """
-    for i in range(len(results["ids"])):
-        listing_id = results["ids"][i]
-        metadata = results["metadatas"][i][0]
+
+    # Loop through each listing and extract metadata
+    for index, listing_id in enumerate(results["ids"][0]):
+        metadata = results["metadatas"][0][index]
         neighborhood = metadata["neighborhood"]
         price = metadata["price"]
         bedrooms = metadata["bedrooms"]
         bathrooms = metadata["bathrooms"]
         size_sqft = metadata["size_sqft"]
+
+        # Personalize the listing description
         personalized_description = personalize_listing(
-            results["documents"][i], bedrooms, bathrooms, location, price_range, property_type, other_prefs
+            results["documents"][0][index], bedrooms, bathrooms, location, price_range, property_type, other_prefs
         )
 
+        # Generate HTML for the listing
         listing_html = generate_listing_html(
             listing_id, neighborhood, price, bedrooms, bathrooms, size_sqft, personalized_description)
+
+        # Append listing HTML to the output
         output_html += listing_html
 
+        # Add horizontal line between listings
+        output_html += "<hr>"
+
+    # Complete HTML structure
     output_html += """
     </div>
     """
