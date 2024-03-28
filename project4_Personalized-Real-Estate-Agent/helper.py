@@ -134,9 +134,9 @@ def process_listings(listings_map):
 
             # Add the record to the database collection
             collection.add(
-                documents=[document_content],
-                metadatas=[doc_meta_data],
-                ids=[str(listing["id"])],
+                documents=document_content,
+                metadatas=doc_meta_data,
+                ids=str(listing["id"]),
             )
 
         else:
@@ -222,10 +222,17 @@ def query_listings(bedrooms, bathrooms, location, price_min, price_max, property
     query_text = f"Bedrooms: {bedrooms}, Bathrooms: {bathrooms}, Location: {location}, Price Range: {price_min}-{price_max}, Property Type: {property_type}, Other Requirements: {other_prefs}"
 
     # Performing the query using the constructed query text and returning 3 results
-    results = collection.query(query_texts=[query_text], n_results=3)
+    results = collection.query(query_texts=query_text, n_results=3)
+
+    # Flatten the nested lists from [[]] to []
+    flattened_results = {
+        "ids": [item for sublist in results["ids"] for item in sublist],
+        "metadatas": [item for sublist in results["metadatas"] for item in sublist],
+        "documents": [item for sublist in results["documents"] for item in sublist]
+    }
 
     # Returning the results of the query
-    return results
+    return flattened_results
 
 
 def personalize_listing(document, bedrooms, bathrooms, location, price_range, property_type, other_prefs):
@@ -335,8 +342,8 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
     """
 
     # Loop through each listing and extract metadata
-    for index, listing_id in enumerate(results["ids"][0]):
-        metadata = results["metadatas"][0][index]
+    for index, listing_id in enumerate(results["ids"]):
+        metadata = results["metadatas"][index]
         neighborhood = metadata["neighborhood"]
         price = metadata["price"]
         bedrooms = metadata["bedrooms"]
@@ -345,7 +352,7 @@ def get_personalized_listings(bedrooms, bathrooms, location, price_range, proper
 
         # Personalize the listing description
         personalized_description = personalize_listing(
-            results["documents"][0][index], bedrooms, bathrooms, location, price_range, property_type, other_prefs
+            results["documents"][index], bedrooms, bathrooms, location, price_range, property_type, other_prefs
         )
 
         # Generate HTML for the listing
